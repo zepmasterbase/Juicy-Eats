@@ -1,0 +1,598 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Juicy Eats | African Food Delivery</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"/>
+
+  <style>
+
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+      scroll-behavior:smooth;
+    }
+
+    body{
+      font-family:'Poppins',sans-serif;
+      background:#0f0f0f;
+      color:#fff;
+      overflow-x:hidden;
+    }
+
+    a{
+      text-decoration:none;
+      color:inherit;
+    }
+
+    /* NAVBAR */
+
+    nav{
+      width:100%;
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      padding:20px 8%;
+      position:fixed;
+      top:0;
+      z-index:1000;
+      backdrop-filter:blur(10px);
+      background:rgba(0,0,0,0.5);
+    }
+
+    .logo{
+      font-size:28px;
+      font-weight:700;
+      color:#ff9f1c;
+    }
+
+    .nav-links{
+      display:flex;
+      gap:30px;
+    }
+
+    .nav-links a{
+      transition:0.3s;
+    }
+
+    .nav-links a:hover{
+      color:#ff9f1c;
+    }
+
+    .order-btn{
+      background:#25D366;
+      padding:12px 22px;
+      border-radius:50px;
+      font-weight:600;
+      transition:0.3s;
+    }
+
+    .order-btn:hover{
+      transform:scale(1.05);
+    }
+
+    /* HERO */
+
+    .hero{
+      height:100vh;
+      background:
+      linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.7)),
+      url('https://images.unsplash.com/photo-1504674900247-0877df9cc836?q=80&w=1600&auto=format&fit=crop');
+      background-size:cover;
+      background-position:center;
+      display:flex;
+      align-items:center;
+      padding:0 8%;
+    }
+
+    .hero-content{
+      max-width:650px;
+    }
+
+    .hero h1{
+      font-size:72px;
+      line-height:1.1;
+      margin-bottom:20px;
+    }
+
+    .hero span{
+      color:#ff9f1c;
+    }
+
+    .hero p{
+      font-size:20px;
+      color:#ddd;
+      margin-bottom:35px;
+    }
+
+    .hero-buttons{
+      display:flex;
+      gap:20px;
+      flex-wrap:wrap;
+    }
+
+    .primary-btn{
+      background:#ff9f1c;
+      padding:16px 30px;
+      border-radius:50px;
+      font-weight:600;
+      color:#111;
+      transition:0.3s;
+    }
+
+    .primary-btn:hover{
+      transform:translateY(-3px);
+    }
+
+    .secondary-btn{
+      border:2px solid #fff;
+      padding:16px 30px;
+      border-radius:50px;
+      transition:0.3s;
+    }
+
+    .secondary-btn:hover{
+      background:#fff;
+      color:#111;
+    }
+
+    /* SECTION */
+
+    section{
+      padding:100px 8%;
+    }
+
+    .section-title{
+      text-align:center;
+      margin-bottom:60px;
+    }
+
+    .section-title h2{
+      font-size:42px;
+      margin-bottom:10px;
+    }
+
+    .section-title p{
+      color:#aaa;
+    }
+
+    /* MENU */
+
+    .menu-grid{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+      gap:30px;
+    }
+
+    .meal-card{
+      background:#181818;
+      border-radius:24px;
+      overflow:hidden;
+      transition:0.4s;
+      box-shadow:0 10px 30px rgba(0,0,0,0.4);
+    }
+
+    .meal-card:hover{
+      transform:translateY(-10px);
+    }
+
+    .meal-card img{
+      width:100%;
+      height:230px;
+      object-fit:cover;
+    }
+
+    .meal-content{
+      padding:25px;
+    }
+
+    .meal-content h3{
+      margin-bottom:10px;
+      font-size:24px;
+    }
+
+    .meal-content p{
+      color:#bbb;
+      margin-bottom:20px;
+      font-size:15px;
+    }
+
+    .price{
+      color:#ff9f1c;
+      font-size:22px;
+      font-weight:700;
+      margin-bottom:20px;
+      display:block;
+    }
+
+    .whatsapp-btn{
+      background:#25D366;
+      display:inline-block;
+      padding:12px 22px;
+      border-radius:40px;
+      font-weight:600;
+      transition:0.3s;
+    }
+
+    .whatsapp-btn:hover{
+      transform:scale(1.05);
+    }
+
+    /* WHY US */
+
+    .features{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+      gap:30px;
+    }
+
+    .feature-box{
+      background:#181818;
+      padding:40px 25px;
+      border-radius:24px;
+      text-align:center;
+      transition:0.3s;
+    }
+
+    .feature-box:hover{
+      transform:translateY(-8px);
+    }
+
+    .feature-box i{
+      font-size:40px;
+      color:#ff9f1c;
+      margin-bottom:20px;
+    }
+
+    .feature-box h4{
+      margin-bottom:10px;
+      font-size:22px;
+    }
+
+    .feature-box p{
+      color:#bbb;
+    }
+
+    /* CTA */
+
+    .cta{
+      background:linear-gradient(to right,#ff9f1c,#ff6b00);
+      border-radius:30px;
+      text-align:center;
+      padding:80px 40px;
+    }
+
+    .cta h2{
+      font-size:50px;
+      color:#111;
+      margin-bottom:20px;
+    }
+
+    .cta p{
+      color:#222;
+      margin-bottom:30px;
+      font-size:18px;
+    }
+
+    .cta a{
+      background:#111;
+      color:#fff;
+      padding:16px 30px;
+      border-radius:50px;
+      font-weight:600;
+      display:inline-block;
+    }
+
+    /* FOOTER */
+
+    footer{
+      background:#090909;
+      padding:50px 8%;
+    }
+
+    .footer-content{
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      flex-wrap:wrap;
+      gap:20px;
+    }
+
+    .socials{
+      display:flex;
+      gap:20px;
+      font-size:22px;
+    }
+
+    .socials a{
+      transition:0.3s;
+    }
+
+    .socials a:hover{
+      color:#ff9f1c;
+    }
+
+    /* WHATSAPP FLOAT */
+
+    .float{
+      position:fixed;
+      width:65px;
+      height:65px;
+      bottom:25px;
+      right:25px;
+      background:#25D366;
+      color:#fff;
+      border-radius:50%;
+      text-align:center;
+      font-size:32px;
+      box-shadow:0 10px 25px rgba(0,0,0,0.4);
+      z-index:100;
+      display:flex;
+      justify-content:center;
+      align-items:center;
+      transition:0.3s;
+    }
+
+    .float:hover{
+      transform:scale(1.1);
+    }
+
+    /* MOBILE */
+
+    @media(max-width:900px){
+
+      .hero h1{
+        font-size:50px;
+      }
+
+      .nav-links{
+        display:none;
+      }
+
+      .cta h2{
+        font-size:36px;
+      }
+
+    }
+
+  </style>
+</head>
+
+<body>
+
+  <!-- NAVBAR -->
+
+  <nav>
+
+    <div class="logo">Juicy Eats</div>
+
+    <div class="nav-links">
+      <a href="#">Home</a>
+      <a href="#menu">Menu</a>
+      <a href="#about">About</a>
+      <a href="#contact">Contact</a>
+    </div>
+
+    <a href="https://wa.me/27123456789" class="order-btn">
+      Order Now
+    </a>
+
+  </nav>
+
+  <!-- HERO -->
+
+  <section class="hero">
+
+    <div class="hero-content">
+
+      <h1>
+        Cape Town’s <span>Juiciest</span> African Flavours
+      </h1>
+
+      <p>
+        From sizzling boerewors meals to delicious shawarmas and authentic African cuisine — delivered fresh to your doorstep.
+      </p>
+
+      <div class="hero-buttons">
+
+        <a href="https://wa.me/27123456789" class="primary-btn">
+          Order on WhatsApp
+        </a>
+
+        <a href="#menu" class="secondary-btn">
+          View Menu
+        </a>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- MENU -->
+
+  <section id="menu">
+
+    <div class="section-title">
+      <h2>Popular Meals</h2>
+      <p>Freshly prepared with bold African flavours</p>
+    </div>
+
+    <div class="menu-grid">
+
+      <!-- CARD -->
+
+      <div class="meal-card">
+
+        <img src="https://images.unsplash.com/photo-1555939594-58d7cb561ad1?q=80&w=1200&auto=format&fit=crop">
+
+        <div class="meal-content">
+
+          <h3>Boerewors & Chips</h3>
+
+          <p>
+            Juicy grilled boerewors served with crispy golden chips.
+          </p>
+
+          <span class="price">R89</span>
+
+          <a href="https://wa.me/27123456789?text=Hi%20Juicy%20Eats%20👋%20I%20want%20to%20order%20Boerewors%20%26%20Chips" class="whatsapp-btn">
+            Order Now
+          </a>
+
+        </div>
+
+      </div>
+
+      <!-- CARD -->
+
+      <div class="meal-card">
+
+        <img src="https://images.unsplash.com/photo-1529006557810-274b9b2fc783?q=80&w=1200&auto=format&fit=crop">
+
+        <div class="meal-content">
+
+          <h3>Chicken Shawarma</h3>
+
+          <p>
+            Loaded shawarma wrap packed with juicy chicken and fresh sauce.
+          </p>
+
+          <span class="price">R75</span>
+
+          <a href="https://wa.me/27123456789?text=Hi%20Juicy%20Eats%20👋%20I%20want%20Chicken%20Shawarma" class="whatsapp-btn">
+            Order Now
+          </a>
+
+        </div>
+
+      </div>
+
+      <!-- CARD -->
+
+      <div class="meal-card">
+
+        <img src="https://images.unsplash.com/photo-1544025162-d76694265947?q=80&w=1200&auto=format&fit=crop">
+
+        <div class="meal-content">
+
+          <h3>Beef Stew & Pap</h3>
+
+          <p>
+            Rich African-style beef stew served with soft pap.
+          </p>
+
+          <span class="price">R95</span>
+
+          <a href="https://wa.me/27123456789?text=Hi%20Juicy%20Eats%20👋%20I%20want%20Beef%20Stew%20%26%20Pap" class="whatsapp-btn">
+            Order Now
+          </a>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- WHY US -->
+
+  <section id="about">
+
+    <div class="section-title">
+      <h2>Why Juicy Eats?</h2>
+      <p>Fast delivery. Authentic flavour. Premium quality.</p>
+    </div>
+
+    <div class="features">
+
+      <div class="feature-box">
+        <i class="fa-solid fa-truck-fast"></i>
+        <h4>Fast Delivery</h4>
+        <p>Quick delivery across Cape Town.</p>
+      </div>
+
+      <div class="feature-box">
+        <i class="fa-solid fa-fire"></i>
+        <h4>Fresh & Hot</h4>
+        <p>Meals served fresh and sizzling hot.</p>
+      </div>
+
+      <div class="feature-box">
+        <i class="fa-solid fa-utensils"></i>
+        <h4>African Cuisine</h4>
+        <p>Authentic local flavours made with love.</p>
+      </div>
+
+      <div class="feature-box">
+        <i class="fa-solid fa-star"></i>
+        <h4>Premium Taste</h4>
+        <p>Quality ingredients in every bite.</p>
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- CTA -->
+
+  <section id="contact">
+
+    <div class="cta">
+
+      <h2>Hungry Yet?</h2>
+
+      <p>
+        Order your favourite African meals directly on WhatsApp today.
+      </p>
+
+      <a href="https://wa.me/27123456789">
+        Order on WhatsApp
+      </a>
+
+    </div>
+
+  </section>
+
+  <!-- FOOTER -->
+
+  <footer>
+
+    <div class="footer-content">
+
+      <div>
+        <h3>Juicy Eats</h3>
+        <p>Cape Town Food Delivery Service</p>
+      </div>
+
+      <div class="socials">
+
+        <a href="#"><i class="fab fa-instagram"></i></a>
+
+        <a href="#"><i class="fab fa-facebook"></i></a>
+
+        <a href="#"><i class="fab fa-tiktok"></i></a>
+
+      </div>
+
+    </div>
+
+  </footer>
+
+  <!-- FLOATING WHATSAPP -->
+
+  <a href="https://wa.me/27123456789" class="float">
+    <i class="fab fa-whatsapp"></i>
+  </a>
+
+</body>
+</html>
